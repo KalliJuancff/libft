@@ -2,3 +2,7 @@
 	sudo apt-get update
 	sudo apt-get install vim
 
+- Configure Git:
+  git config --global user.email "you@example.com"
+  git config --global user.name "Tu Nombre"
+
