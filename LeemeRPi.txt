@@ -1,3 +1,6 @@
+- How to SSH into GitHub on Windows example:
+  https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Windows-Example
+
 - Instalar vim:
 	sudo apt-get update
 	sudo apt-get install vim
@@ -6,3 +9,10 @@
   git config --global user.email "you@example.com"
   git config --global user.name "Tu Nombre"
 
+- 42 Header:
+  https://github.com/42Paris/42header/tree/master
+
+- 42 norminette:
+  https://github.com/42School/norminette
+  + 
+  https://www.youtube.com/watch?v=v_hn_VTMftc
