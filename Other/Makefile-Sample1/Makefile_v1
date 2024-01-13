@@ -1,0 +1,28 @@
+# REGLA 1:
+# objetivo: dependencias
+# 	instrucciones (o comandos)
+# ...
+# 
+# REGLA n:
+# objetivo: dependencias
+# 	instrucciones (o comandos)
+
+all: programa
+
+programa: mensaje main.o salida.o calculadora.o 
+	cc -o programa.out main.o salida.o calculadora.o
+
+main.o: main.c funciones.h
+	cc -c main.c
+
+salida.o: salida.c funciones.h
+	cc -c salida.c
+
+calculadora.o: calculadora.c funciones.h
+	cc -c calculadora.c
+
+mensaje:
+	@echo Makefile-Sample1:
+
+clean: 
+	rm -f programa.out *.o

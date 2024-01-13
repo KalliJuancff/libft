@@ -1,0 +1,26 @@
+# REGLA 1:
+# objetivo: dependencias
+# 	instrucciones (o comandos)
+# ...
+# 
+# REGLA n:
+# objetivo: dependencias
+# 	instrucciones (o comandos)
+
+OBJS = main.o salida.o calculadora.o
+BINARY = programa.out
+CFLAGS = -Wall -Wextra -Werror
+
+all: programa.out
+
+programa.out: $(OBJS)
+	cc -o $(BINARY) $(OBJS)
+
+main.o: main.c funciones.h
+
+salida.o: salida.c funciones.h
+
+calculadora.o: calculadora.c funciones.h
+
+clean: 
+	rm -f $(BINARY) $(OBJS)

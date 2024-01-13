@@ -1,0 +1,29 @@
+# REGLA 1:
+# objetivo: dependencias
+# 	instrucciones (o comandos)
+# ...
+# 
+# REGLA n:
+# objetivo: dependencias
+# 	instrucciones (o comandos)
+
+x = hola
+y := $(x) adios
+z = $(x) adios
+x = adios
+
+pruebas_variables:
+	@echo 'PRUEBAS VARIABLES:'
+	@echo '------------------'
+	
+	@echo 'ADIOS:'
+	@echo $(x)
+	@echo
+	
+	@echo 'HOLA ADIOS:'
+	@echo $(y)
+	@echo
+	
+	@echo 'ADIOS ADIOS:'
+	@echo $(z)
+
