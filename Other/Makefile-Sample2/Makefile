@@ -1,0 +1,13 @@
+# REGLA 1:
+# target (objetivo o destino): prerequisites (prerrequisitos o dependencias)
+# 	recipe (receta, acciones, instrucciones o comandos)
+# ...
+# 
+# REGLA n:
+# target (objetivo o destino): prerequisites (prerrequisitos o dependencias)
+# 	recipe (receta, acciones, instrucciones o comandos)
+#
+# target = [archivo generado | nombre de acción]
+# prerequisites = archivo usado para generar el target
+# NOTA: Si un prerrequisito cambia => se ejecuta la receta
+
