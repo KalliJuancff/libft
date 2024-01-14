@@ -12,12 +12,8 @@
 # 
 # NOTA: Si un prerrequisito cambia => se ejecuta la receta
 
-TARGET = mi_programa.out
-OBJS = main.o diag.o com.o init.o
-CFLAGS = -Wall
-
-$(TARGET): $(OBJS) 
-	cc $(CFLAGS) $(OBJS) -o $(TARGET)
+mi_programa.out: main.o diag.o com.o init.o
+	cc main.o diag.o com.o init.o -o mi_programa.out
 
 main.o: main.c init.h diag.h com.h
 diag.o: diag.c init.h diag.h com.h
@@ -26,4 +22,4 @@ com.o: com.c init.h com.h
 
 .PHONY: clean
 clean:
-	rm -f *.o $(TARGET)
+	rm -f *.o mi_programa.out
