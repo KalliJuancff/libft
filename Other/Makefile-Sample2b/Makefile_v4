@@ -1,0 +1,38 @@
+# REGLA 1:
+# target (objetivo o destino): prerequisites (prerrequisitos o dependencias)
+# 	recipe (receta, acciones, instrucciones o comandos)
+# ...
+# 
+# REGLA n:
+# target (objetivo o destino): prerequisites (prerrequisitos o dependencias)
+# 	recipe (receta, acciones, instrucciones o comandos)
+#
+# target = [archivo generado | nombre de acción]
+# prerequisites = archivo usado para generar el target
+# 
+# NOTA: Si un prerrequisito cambia => se ejecuta la receta
+
+TARGET = $(BIN_DIR)/mi_programa.out
+OBJ_DIR = ./obj
+BIN_DIR = ./bin
+INC_DIR = ./inc
+SRC_DIR = ./src
+OBJS = $(OBJ_DIR)/main.o \
+	$(OBJ_DIR)/diag.o \
+	$(OBJ_DIR)/com.o \
+	$(OBJ_DIR)/init.o
+CFLAGS = -Wall -I$(INC_DIR)
+
+$(TARGET): $(OBJS)
+	@mkdir -p $(BIN_DIR)
+	cc $(CFLAGS) $(OBJS) -o $(TARGET)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	cc -c -MD $(CFLAGS) $< -o $@
+
+-include $(OBJ_DIR)/*.d
+
+.PHONY: clean
+clean:
+	@rm -rf $(OBJ_DIR) $(BIN_DIR)
