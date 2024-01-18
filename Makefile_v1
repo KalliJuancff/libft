@@ -1,0 +1,22 @@
+# REGLA:
+# target (objetivo o destino): prerequisites (prerrequisitos o dependencias)
+# 	recipe (receta, acciones, instrucciones o comandos)
+
+
+all: libft.a
+
+libft.a: ft_isalpha.o
+	ar rcs libft.a ft_isalpha.o
+
+ft_isalpha.o: ft_isalpha.c
+	cc -c ft_isalpha.c
+
+clean:
+	rm -f *.o
+
+fclean: clean
+	rm -f libft.a
+
+re: fclean all
+
+.PHONY: all clean fclean re
