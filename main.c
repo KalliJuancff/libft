@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/20 21:18:27 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/20 22:03:30 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void	test_strlen(const char *s)
 void	test_toupper(int c)
 {
 	printf("toupper '%c'?: [FT] %d; [C] %d\n", c, ft_toupper(c), toupper(c));
+}
+
+void	test_tolower(int c)
+{
+	printf("tolower '%c'?: [FT] %d; [C] %d\n", c, ft_tolower(c), tolower(c));
 }
 
 void	test_ft_isalpha(void)
@@ -133,6 +138,17 @@ void	test_ft_toupper(void)
 	write_empty_line();
 }
 
+void	test_ft_tolower(void)
+{
+	test_tolower('A');
+	test_tolower('G');
+	test_tolower('Z');
+	test_tolower('a');
+	test_tolower('z');
+	test_tolower(0);
+	write_empty_line();
+}
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -142,5 +158,6 @@ int	main(void)
 	test_ft_isprint();
 	test_ft_strlen();
 	test_ft_toupper();
+	test_ft_tolower();
 	return (0);
 }
