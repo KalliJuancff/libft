@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/20 18:46:55 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:50:43 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void	test_isalnum(int c)
 void	test_isascii(int c)
 {
 	printf("isascii '%d'?: [FT] %d; [C] %d\n", c, ft_isascii(c), isascii(c));
+}
+
+void	test_isprint(int c)
+{
+	printf("isprint '%d'?: [FT] %d; [C] %d\n", c, ft_isprint(c), isprint(c));
 }
 
 void	test_ft_isalpha(void)
@@ -86,6 +91,16 @@ void	test_ft_isascii(void)
 	test_isascii(127);
 	test_isascii(127 + 1);
 	test_isascii(255);
+	write_empty_line();
+}
+
+void	test_ft_isprint(void)
+{
+	test_isprint(31);
+	test_isprint(32);
+	test_isprint(126);
+	test_isprint(127);
+	write_empty_line();
 }
 
 int	main(void)
@@ -94,5 +109,6 @@ int	main(void)
 	test_ft_isdigit();
 	test_ft_isalnum();
 	test_ft_isascii();
+	test_ft_isprint();
 	return (0);
 }
