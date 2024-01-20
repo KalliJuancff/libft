@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/20 10:11:32 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/20 11:54:32 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void	write_empty_line()
+void	write_empty_line(void)
 {
 	printf("\n");
 }
 
 void	test_isalpha(int c)
 {
-	printf("Is alpha '%c'?: [FT] %d; [C] %d\n", c, ft_isalpha(c), isalpha(c));
+	printf("isalpha '%c'?: [FT] %d; [C] %d\n", c, ft_isalpha(c), isalpha(c));
 }
 
 void	test_isdigit(int c)
 {
-	printf("Is digit '%c'?: [FT] %d; [C] %d\n", c, ft_isdigit(c), isdigit(c));
+	printf("isdigit '%c'?: [FT] %d; [C] %d\n", c, ft_isdigit(c), isdigit(c));
 }
 
-void	test_ft_isalpha()
+void	test_isalnum(int c)
+{
+	printf("isalnum '%c'?: [FT] %d; [C] %d\n", c, ft_isalnum(c), isalnum(c));
+}
+
+void	test_ft_isalpha(void)
 {
 	test_isalpha('A');
 	test_isalpha('Z');
@@ -42,7 +47,7 @@ void	test_ft_isalpha()
 	write_empty_line();
 }
 
-void	test_ft_isdigit()
+void	test_ft_isdigit(void)
 {
 	test_isdigit('0');
 	test_isdigit('9');
@@ -51,9 +56,27 @@ void	test_ft_isdigit()
 	write_empty_line();
 }
 
+void	test_ft_isalnum(void)
+{
+	test_isalnum('A');
+	test_isalnum('Z');
+	test_isalnum('a');
+	test_isalnum('z');
+	test_isalnum('A' - 1);
+	test_isalnum('Z' + 1);
+	test_isalnum('a' - 1);
+	test_isalnum('z' + 1);
+	test_isalnum('0');
+	test_isalnum('9');
+	test_isalnum('A');
+	test_isalnum('z');
+	write_empty_line();
+}
+
 int	main(void)
 {
 	test_ft_isalpha();
 	test_ft_isdigit();
+	test_ft_isalnum();
 	return (0);
 }
