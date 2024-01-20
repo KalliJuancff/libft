@@ -6,13 +6,14 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/20 19:50:43 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:55:58 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 void	write_empty_line(void)
 {
@@ -42,6 +43,11 @@ void	test_isascii(int c)
 void	test_isprint(int c)
 {
 	printf("isprint '%d'?: [FT] %d; [C] %d\n", c, ft_isprint(c), isprint(c));
+}
+
+void	test_strlen(const char *s)
+{
+	printf("strlen '%s'?: [FT] %u; [C] %u\n", s, ft_strlen(s), strlen(s));
 }
 
 void	test_ft_isalpha(void)
@@ -103,6 +109,14 @@ void	test_ft_isprint(void)
 	write_empty_line();
 }
 
+void	test_ft_strlen(void)
+{
+	test_strlen("");
+	test_strlen("DIO");
+	test_strlen("GOTT");
+	write_empty_line();
+}
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -110,5 +124,6 @@ int	main(void)
 	test_ft_isalnum();
 	test_ft_isascii();
 	test_ft_isprint();
+	test_ft_strlen();
 	return (0);
 }
