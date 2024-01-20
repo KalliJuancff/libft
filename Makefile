@@ -8,7 +8,8 @@ OBJS = ft_isalpha.o \
 	ft_isalnum.o \
 	ft_isascii.o \
 	ft_isprint.o \
-	ft_strlen.o
+	ft_strlen.o \
+	ft_toupper.o
 AR = ar
 AR_FLAGS = rcs
 CC = cc

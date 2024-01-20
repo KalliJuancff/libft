@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/20 20:55:58 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/20 21:18:27 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ void	test_isprint(int c)
 void	test_strlen(const char *s)
 {
 	printf("strlen '%s'?: [FT] %u; [C] %u\n", s, ft_strlen(s), strlen(s));
+}
+
+void	test_toupper(int c)
+{
+	printf("toupper '%c'?: [FT] %d; [C] %d\n", c, ft_toupper(c), toupper(c));
 }
 
 void	test_ft_isalpha(void)
@@ -117,6 +122,17 @@ void	test_ft_strlen(void)
 	write_empty_line();
 }
 
+void	test_ft_toupper(void)
+{
+	test_toupper('a');
+	test_toupper('g');
+	test_toupper('z');
+	test_toupper('A');
+	test_toupper('Z');
+	test_toupper(0);
+	write_empty_line();
+}
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -125,5 +141,6 @@ int	main(void)
 	test_ft_isascii();
 	test_ft_isprint();
 	test_ft_strlen();
+	test_ft_toupper();
 	return (0);
 }
