@@ -5,7 +5,8 @@
 NAME = libft.a
 OBJS = ft_isalpha.o \
 	ft_isdigit.o \
-	ft_isalnum.o
+	ft_isalnum.o \
+	ft_isascii.o
 AR = ar
 AR_FLAGS = rcs
 CC = cc
