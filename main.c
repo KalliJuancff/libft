@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/20 22:03:30 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/21 13:51:38 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,21 @@ void	test_ft_tolower(void)
 	write_empty_line();
 }
 
+
+void	test_strchr(const char *s, int c)
+{
+
+	printf("strchr '%s', '%c'?: [FT] %s; [C] %s\n", s, c, ft_strchr(s, c), strchr(s, c));
+}
+
+void	test_ft_strchr(void)
+{
+	test_strchr("XYZ", 90);
+	test_strchr("DEFG", 65);
+	test_strchr("", 65);
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -159,5 +174,6 @@ int	main(void)
 	test_ft_strlen();
 	test_ft_toupper();
 	test_ft_tolower();
+	test_ft_strchr();
 	return (0);
 }
