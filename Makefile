@@ -3,6 +3,7 @@
 # 	recipe (receta, acciones, instrucciones o comandos)
 
 NAME = libft.a
+HEADER = libft.h
 OBJS = ft_isalpha.o \
 	ft_isdigit.o \
 	ft_isalnum.o \
@@ -10,6 +11,7 @@ OBJS = ft_isalpha.o \
 	ft_isprint.o \
 	ft_strlen.o \
 	ft_toupper.o
+DEPS = $(OBJS:.o=.d)
 AR = ar
 AR_FLAGS = rcs
 CC = cc
@@ -29,6 +31,7 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) $(RM_FLAGS) $(OBJS)
+	$(RM) $(RM_FLAGS) $(DEPS)
 
 fclean: clean
 	$(RM) $(RM_FLAGS) $(NAME)
@@ -36,7 +39,7 @@ fclean: clean
 re: fclean all
 
 norm:
-	@norminette libft.h
-	@norminette ft*.c
+	@norminette $(HEADER)
+	@norminette $(OBJS:.o=.c)
 
 .PHONY: all clean fclean re norm
