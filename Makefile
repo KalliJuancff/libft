@@ -13,7 +13,7 @@ OBJS = ft_isalpha.o \
 AR = ar
 AR_FLAGS = rcs
 CC = cc
-CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror -MD
 RM = rm
 RM_FLAGS = -f
 
@@ -25,6 +25,8 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) -o $@ $(CC_FLAGS) -c $<
 
+-include *.d
+
 clean:
 	$(RM) $(RM_FLAGS) $(OBJS)
 
@@ -33,4 +35,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+norm:
+	@norminette libft.h
+	@norminette ft*.c
+
+.PHONY: all clean fclean re norm

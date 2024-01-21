@@ -6,11 +6,9 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 20:46:59 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/18 20:49:01 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/21 10:05:53 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {
