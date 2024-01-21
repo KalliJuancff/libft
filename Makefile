@@ -27,7 +27,7 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) -o $@ $(CC_FLAGS) -c $<
 
--include *.d
+-include $(DEPS)
 
 clean:
 	$(RM) $(RM_FLAGS) $(OBJS)
