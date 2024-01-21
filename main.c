@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/21 13:51:38 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:05:09 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,9 +158,24 @@ void	test_strchr(const char *s, int c)
 
 void	test_ft_strchr(void)
 {
-	test_strchr("XYZ", 90);
+	test_strchr("XYZXYZXY", 90);
 	test_strchr("DEFG", 65);
 	test_strchr("", 65);
+	write_empty_line();
+}
+
+
+void	test_strrchr(const char *s, int c)
+{
+	printf("strrchr '%s', '%c'?: [FT] %s; [C] %s\n", s, c, ft_strrchr(s, c), strrchr(s, c));
+}
+
+void	test_ft_strrchr(void)
+{
+	test_strrchr("XYZXYZXY", 90);
+	test_strrchr("DEFG", 65);
+	test_strrchr("", 65);
+	write_empty_line();
 }
 
 
@@ -175,5 +190,6 @@ int	main(void)
 	test_ft_toupper();
 	test_ft_tolower();
 	test_ft_strchr();
+	test_ft_strrchr();
 	return (0);
 }
