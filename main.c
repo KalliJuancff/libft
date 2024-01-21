@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/21 17:05:09 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/21 21:23:43 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,25 @@ void	test_ft_strrchr(void)
 }
 
 
+void	test_memset(int c, size_t n)
+{
+	char buffer[n + 1];
+	buffer[n] = '\0';
+	ft_memset(buffer, c, n);
+	printf("memset de '%d' veces del valor '%d': [FT] '%s'\n", n, c, buffer);
+	char buffer2[n + 1];
+	buffer2[n] = '\0';
+	memset(buffer2, c, n);
+	printf("memset de '%d' veces del valor '%d': [C] '%s'\n", n, c, buffer2);
+}
+
+void	test_ft_memset(void)
+{
+	test_memset('G', 7);
+	write_empty_line();
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -191,5 +210,6 @@ int	main(void)
 	test_ft_tolower();
 	test_ft_strchr();
 	test_ft_strrchr();
+	test_ft_memset();
 	return (0);
 }
