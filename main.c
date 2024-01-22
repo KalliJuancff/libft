@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 11:13:22 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:34:00 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,6 +228,23 @@ void	test_ft_bzero(void)
 }
 
 
+void	test_strncmp(const char *s1, const char *s2, size_t n)
+{
+	printf("strncmp '%s', '%s', '%d'?: [FT] %d; [C] %d\n", s1, s2, n, ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
+}
+
+void	test_ft_strncmp(void)
+{
+	test_strncmp("HOLA", "HOLA", 4);
+	test_strncmp("HOLA", "HOLA", 7);
+	test_strncmp("HOLA", "HOLAS", 4);
+	test_strncmp("HOLA", "HOLAS", 5);
+	test_strncmp("HOLAS", "HOLA", 4);
+	test_strncmp("HOLAS", "HOLA", 5);
+	test_strncmp("HOLA", "HOLA", 3);
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -242,5 +259,6 @@ int	main(void)
 	test_ft_strrchr();
 	test_ft_memset();
 	test_ft_bzero();
+	test_ft_strncmp();
 	return (0);
 }
