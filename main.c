@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 13:34:00 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:22:18 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,8 +242,22 @@ void	test_ft_strncmp(void)
 	test_strncmp("HOLAS", "HOLA", 4);
 	test_strncmp("HOLAS", "HOLA", 5);
 	test_strncmp("HOLA", "HOLA", 3);
+	write_empty_line();
 }
 
+
+void	test_memchr(const void *s, int c, size_t n)
+{
+	printf("memchr de '%d' chars del valor '%d': [FT] '%p'\n", n, c, ft_memchr(s, c, n));
+	printf("memchr de '%d' chars del valor '%d': [C] '%p'\n", n, c, memchr(s, c, n));
+}
+
+void	test_ft_memchr(void)
+{
+	test_memchr("HOLA", 'L', 4);
+	test_memchr("HOLA", 'G', 4);
+	write_empty_line();
+}
 
 int	main(void)
 {
@@ -260,5 +274,6 @@ int	main(void)
 	test_ft_memset();
 	test_ft_bzero();
 	test_ft_strncmp();
+	test_ft_memchr();
 	return (0);
 }
