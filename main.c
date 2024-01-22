@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 18:10:21 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/22 20:23:31 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -307,6 +307,26 @@ void	test_ft_memcpy(void)
 }
 
 
+void	test_memmove(void)
+{
+	char buffer[] = "1234567890";
+	printf("Buffer (antes): %s\n", buffer);
+	ft_memmove(buffer + 2, buffer, 5);
+	printf("Buffer (después): [FT] %s\n", buffer);
+
+	char buffer2[] = "1234567890";
+	printf("Buffer (antes): %s\n", buffer2);
+	memmove(buffer2 + 2, buffer2, 5);
+	printf("Buffer (después): [C] %s\n", buffer2);
+}
+
+void	test_ft_memmove(void)
+{
+	test_memmove();
+	write_empty_line();
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -325,5 +345,6 @@ int	main(void)
 	test_ft_memchr();
 	test_ft_memcmp();
 	test_ft_memcpy();
+	test_ft_memmove();
 	return (0);
 }
