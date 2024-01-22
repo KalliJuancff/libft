@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 16:22:18 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:28:55 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,8 +248,8 @@ void	test_ft_strncmp(void)
 
 void	test_memchr(const void *s, int c, size_t n)
 {
-	printf("memchr de '%d' chars del valor '%d': [FT] '%p'\n", n, c, ft_memchr(s, c, n));
-	printf("memchr de '%d' chars del valor '%d': [C] '%p'\n", n, c, memchr(s, c, n));
+	printf("memchr de %d chars del valor '%d': [FT] '%p'\n", n, c, ft_memchr(s, c, n));
+	printf("memchr de %d chars del valor '%d': [C] '%p'\n", n, c, memchr(s, c, n));
 }
 
 void	test_ft_memchr(void)
@@ -258,6 +258,23 @@ void	test_ft_memchr(void)
 	test_memchr("HOLA", 'G', 4);
 	write_empty_line();
 }
+
+
+void	test_memcmp(const void *s1, const void *s2, size_t n)
+{
+	char *p1 = (char *)s1;
+	char *p2 = (char *)s2;
+	printf("memcmp de %d cars. de '%s' contra '%s': [FT] '%d'\n", n, p1, p2, ft_memcmp(s1, s2, n));
+	printf("memcmp de %d cars. de '%s' contra '%s': [C] '%d'\n", n, p1, p2, memcmp(s1, s2, n));
+}
+
+void	test_ft_memcmp(void)
+{
+	test_memcmp("HOLA", "hola", 4);
+	test_memcmp("hola", "HOLA", 4);
+	write_empty_line();
+}
+
 
 int	main(void)
 {
@@ -275,5 +292,6 @@ int	main(void)
 	test_ft_bzero();
 	test_ft_strncmp();
 	test_ft_memchr();
+	test_ft_memcmp();
 	return (0);
 }
