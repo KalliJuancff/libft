@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 17:28:55 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:10:21 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,7 +200,7 @@ void	test_ft_memset(void)
 
 void	test_bzero(size_t n)
 {
-	char buffer[n];
+	char buffer[n + 1];
 	memset(buffer, 'G', n + 1);
 	unsigned int i = 0;
 	printf("data (%d + 1):\n", n);
@@ -276,6 +276,37 @@ void	test_ft_memcmp(void)
 }
 
 
+void	test_memcpy(const void *src, size_t n)
+{
+	char buffer[n + 1];
+	memset(buffer, 'G', n + 1);
+	unsigned int i = 0;
+	printf("data (%d + 1):\n", n);
+	while (i <= n)
+	{
+		printf("Byte #%d: %c\n", i + 1, buffer[i]);
+		i++;
+	}
+	printf("\n");
+	printf("memcpy [FT]:\n");
+	memcpy(buffer, src, n);
+	i = 0;
+	while (i <= n)
+	{
+		printf("Byte #%d: %c\n", i + 1, buffer[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+void	test_ft_memcpy(void)
+{
+	test_memcpy("HOLA", 4);
+	test_memcpy("hola", 4);
+	write_empty_line();
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -293,5 +324,6 @@ int	main(void)
 	test_ft_strncmp();
 	test_ft_memchr();
 	test_ft_memcmp();
+	test_ft_memcpy();
 	return (0);
 }
