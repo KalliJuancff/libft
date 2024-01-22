@@ -14,7 +14,8 @@ OBJS = ft_isalpha.o \
 	ft_tolower.o \
 	ft_strchr.o \
 	ft_strrchr.o \
-	ft_memset.o
+	ft_memset.o \
+	ft_bzero.o
 DEPS = $(OBJS:.o=.d)
 AR = ar
 AR_FLAGS = rcs

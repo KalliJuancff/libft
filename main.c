@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/21 21:23:43 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:13:22 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,6 +198,36 @@ void	test_ft_memset(void)
 }
 
 
+void	test_bzero(size_t n)
+{
+	char buffer[n];
+	memset(buffer, 'G', n + 1);
+	unsigned int i = 0;
+	printf("data (%d + 1):\n", n);
+	while (i <= n)
+	{
+		printf("Byte #%d: %d\n", i + 1, buffer[i]);
+		i++;
+	}
+	printf("\n");
+	printf("bzero [FT]:\n");
+	ft_bzero(buffer, n);
+	i = 0;
+	while (i <= n)
+	{
+		printf("Byte #%d: %d\n", i + 1, buffer[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+void	test_ft_bzero(void)
+{
+	test_bzero(7);
+	write_empty_line();
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -211,5 +241,6 @@ int	main(void)
 	test_ft_strchr();
 	test_ft_strrchr();
 	test_ft_memset();
+	test_ft_bzero();
 	return (0);
 }
