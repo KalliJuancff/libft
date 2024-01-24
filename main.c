@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 20:23:31 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:50:25 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	test_isprint(int c)
 
 void	test_strlen(const char *s)
 {
-	printf("strlen '%s'?: [FT] %u; [C] %u\n", s, ft_strlen(s), strlen(s));
+	printf("strlen '%s'?: [FT] %lu; [C] %lu\n", s, ft_strlen(s), strlen(s));
 }
 
 void	test_toupper(int c)
@@ -184,11 +184,11 @@ void	test_memset(int c, size_t n)
 	char buffer[n + 1];
 	buffer[n] = '\0';
 	ft_memset(buffer, c, n);
-	printf("memset de '%d' veces del valor '%d': [FT] '%s'\n", n, c, buffer);
+	printf("memset de '%lu' veces del valor '%d': [FT] '%s'\n", n, c, buffer);
 	char buffer2[n + 1];
 	buffer2[n] = '\0';
 	memset(buffer2, c, n);
-	printf("memset de '%d' veces del valor '%d': [C] '%s'\n", n, c, buffer2);
+	printf("memset de '%lu' veces del valor '%d': [C] '%s'\n", n, c, buffer2);
 }
 
 void	test_ft_memset(void)
@@ -202,11 +202,11 @@ void	test_bzero(size_t n)
 {
 	char buffer[n + 1];
 	memset(buffer, 'G', n + 1);
-	unsigned int i = 0;
-	printf("data (%d + 1):\n", n);
+	unsigned long i = 0;
+	printf("data (%lu + 1):\n", n);
 	while (i <= n)
 	{
-		printf("Byte #%d: %d\n", i + 1, buffer[i]);
+		printf("Byte #%lu: %d\n", i + 1, buffer[i]);
 		i++;
 	}
 	printf("\n");
@@ -215,7 +215,7 @@ void	test_bzero(size_t n)
 	i = 0;
 	while (i <= n)
 	{
-		printf("Byte #%d: %d\n", i + 1, buffer[i]);
+		printf("Byte #%lu: %d\n", i + 1, buffer[i]);
 		i++;
 	}
 	printf("\n");
@@ -230,7 +230,7 @@ void	test_ft_bzero(void)
 
 void	test_strncmp(const char *s1, const char *s2, size_t n)
 {
-	printf("strncmp '%s', '%s', '%d'?: [FT] %d; [C] %d\n", s1, s2, n, ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
+	printf("strncmp '%s', '%s', '%lu'?: [FT] %d; [C] %d\n", s1, s2, n, ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
 }
 
 void	test_ft_strncmp(void)
@@ -248,8 +248,8 @@ void	test_ft_strncmp(void)
 
 void	test_memchr(const void *s, int c, size_t n)
 {
-	printf("memchr de %d chars del valor '%d': [FT] '%p'\n", n, c, ft_memchr(s, c, n));
-	printf("memchr de %d chars del valor '%d': [C] '%p'\n", n, c, memchr(s, c, n));
+	printf("memchr de %lu chars del valor '%d': [FT] '%p'\n", n, c, ft_memchr(s, c, n));
+	printf("memchr de %lu chars del valor '%d': [C] '%p'\n", n, c, memchr(s, c, n));
 }
 
 void	test_ft_memchr(void)
@@ -264,8 +264,8 @@ void	test_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char *p1 = (char *)s1;
 	char *p2 = (char *)s2;
-	printf("memcmp de %d cars. de '%s' contra '%s': [FT] '%d'\n", n, p1, p2, ft_memcmp(s1, s2, n));
-	printf("memcmp de %d cars. de '%s' contra '%s': [C] '%d'\n", n, p1, p2, memcmp(s1, s2, n));
+	printf("memcmp de %lu cars. de '%s' contra '%s': [FT] '%d'\n", n, p1, p2, ft_memcmp(s1, s2, n));
+	printf("memcmp de %lu cars. de '%s' contra '%s': [C] '%d'\n", n, p1, p2, memcmp(s1, s2, n));
 }
 
 void	test_ft_memcmp(void)
@@ -280,11 +280,11 @@ void	test_memcpy(const void *src, size_t n)
 {
 	char buffer[n + 1];
 	memset(buffer, 'G', n + 1);
-	unsigned int i = 0;
-	printf("data (%d + 1):\n", n);
+	unsigned long i = 0;
+	printf("data (%lu + 1):\n", n);
 	while (i <= n)
 	{
-		printf("Byte #%d: %c\n", i + 1, buffer[i]);
+		printf("Byte #%lu: %c\n", i + 1, buffer[i]);
 		i++;
 	}
 	printf("\n");
@@ -293,7 +293,7 @@ void	test_memcpy(const void *src, size_t n)
 	i = 0;
 	while (i <= n)
 	{
-		printf("Byte #%d: %c\n", i + 1, buffer[i]);
+		printf("Byte #%lu: %c\n", i + 1, buffer[i]);
 		i++;
 	}
 	printf("\n");
