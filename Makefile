@@ -22,7 +22,8 @@ OBJS = ft_isalpha.o \
 	ft_memcpy.o \
 	ft_memmove.o \
 	ft_strnstr.o \
-	ft_atoi.o
+	ft_atoi.o \
+	ft_calloc.o
 DEPS = $(OBJS:.o=.d)
 AR = ar
 AR_FLAGS = rcs

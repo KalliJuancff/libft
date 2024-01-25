@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 11:42:31 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:13:17 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -393,6 +393,31 @@ void	test_ft_atoi()
 	test_atoi("   +-4201");
 	test_atoi("   +-+4201");
 	test_atoi("   + - + 4201");
+	
+	write_empty_line();
+}
+
+
+void	test_calloc(size_t count, size_t size)
+{
+	size_t n = count * size;
+	printf("calloc [FT]:\n");
+	unsigned char *buffer;
+	buffer = calloc(count, size);
+	unsigned long i = 0;
+	while (i < n)
+	{
+		printf("Byte #%lu: %d\n", i + 1, buffer[i]);
+		i++;
+	}
+	printf("\n");
+	free(buffer);
+}
+
+void	test_ft_calloc()
+{
+	test_calloc(4, 3);
+	write_empty_line();
 }
 
 
@@ -417,5 +442,6 @@ int	main(void)
 	test_ft_memmove();
 	test_ft_strnstr();
 	test_ft_atoi();
+	test_ft_calloc();
 	return (0);
 }
