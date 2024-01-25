@@ -6,13 +6,14 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 10:19:16 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/25 11:42:31 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void	write_empty_line(void)
@@ -363,6 +364,38 @@ void	test_ft_strnstr(void)
 }
 
 
+void	test_atoi(const char *str)
+{
+	printf("ATOI '%s': [FT] %d; [C] %d\n", str, ft_atoi(str), atoi(str));
+}
+
+void	test_ft_atoi()
+{
+	test_atoi("7");
+	test_atoi("34");
+	test_atoi("52");
+	test_atoi("723450");
+	test_atoi("2147483647");
+	
+	test_atoi("0");
+	
+	test_atoi("-7");
+	test_atoi("-34");
+	test_atoi("-52");
+	test_atoi("-723450");
+	test_atoi("-2147483648");
+	
+	test_atoi("   4201");
+	test_atoi("   4201    ");
+	test_atoi("   42 01");
+	test_atoi("   +4201");
+	test_atoi("   \t 4201");
+	test_atoi("   +-4201");
+	test_atoi("   +-+4201");
+	test_atoi("   + - + 4201");
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -383,5 +416,6 @@ int	main(void)
 	test_ft_memcpy();
 	test_ft_memmove();
 	test_ft_strnstr();
+	test_ft_atoi();
 	return (0);
 }
