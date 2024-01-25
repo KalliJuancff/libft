@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:13:17 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:27:28 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -421,6 +421,26 @@ void	test_ft_calloc()
 }
 
 
+void	test_strdup(const char *s1)
+{
+	char *dup = ft_strdup(s1);
+	printf("strdup: [FT] '%s'\n", dup);
+	free(dup);
+	
+	char *dup2 = ft_strdup(s1);
+	printf("strdup: [C]  '%s'\n", dup2);
+	free(dup2);
+}
+
+void	test_ft_strdup()
+{
+	test_strdup("DIO");
+	test_strdup("GOTT");
+	test_strdup("ABCDEFGXYZ");
+	write_empty_line();
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -443,5 +463,6 @@ int	main(void)
 	test_ft_strnstr();
 	test_ft_atoi();
 	test_ft_calloc();
+	test_ft_strdup();
 	return (0);
 }
