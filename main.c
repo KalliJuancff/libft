@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/24 11:50:25 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:19:16 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -327,6 +327,42 @@ void	test_ft_memmove(void)
 }
 
 
+void	test_strnstr(const char *haystack, const char *needle)
+{
+	size_t needle_len = ft_strlen(needle);
+	printf("strnstr '%s' vs. '%s' con '%lu': [FT] %s, [C] %s\n", haystack, needle, needle_len, ft_strnstr(haystack, needle, needle_len), strnstr(haystack, needle, needle_len));
+}
+
+void	test_ft_strnstr(void)
+{
+	test_strnstr("", "");
+	test_strnstr("", "abc");
+	test_strnstr("abc", "");
+	
+	test_strnstr("abc", "defg");
+	test_strnstr("abc", "abc");
+	
+	test_strnstr("abc", "xabc");
+	test_strnstr("abc", "xabcde");
+	test_strnstr("abc", "abcde");
+	
+	test_strnstr("abc", "abx");
+	test_strnstr("abc", "abxabc");
+	test_strnstr("abc", "abxabcde");
+	
+	test_strnstr("abcde", "xyz");
+	test_strnstr("abcde", "xabc");
+	test_strnstr("abcde", "xabcy");
+	test_strnstr("abcde", "xabcdey");
+
+	test_strnstr("abxabc", "abc");
+	test_strnstr("ababc", "abc");
+	test_strnstr("ab", "abc");
+	test_strnstr("abc", "ab");
+	write_empty_line();
+}
+
+
 int	main(void)
 {
 	test_ft_isalpha();
@@ -346,5 +382,6 @@ int	main(void)
 	test_ft_memcmp();
 	test_ft_memcpy();
 	test_ft_memmove();
+	test_ft_strnstr();
 	return (0);
 }
