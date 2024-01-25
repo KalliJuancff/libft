@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:27:28 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/25 20:37:02 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,7 +369,7 @@ void	test_atoi(const char *str)
 	printf("ATOI '%s': [FT] %d; [C] %d\n", str, ft_atoi(str), atoi(str));
 }
 
-void	test_ft_atoi()
+void	test_ft_atoi(void)
 {
 	test_atoi("7");
 	test_atoi("34");
@@ -414,7 +414,7 @@ void	test_calloc(size_t count, size_t size)
 	free(buffer);
 }
 
-void	test_ft_calloc()
+void	test_ft_calloc(void)
 {
 	test_calloc(4, 3);
 	write_empty_line();
@@ -432,12 +432,31 @@ void	test_strdup(const char *s1)
 	free(dup2);
 }
 
-void	test_ft_strdup()
+void	test_ft_strdup(void)
 {
 	test_strdup("DIO");
 	test_strdup("GOTT");
 	test_strdup("ABCDEFGXYZ");
 	write_empty_line();
+}
+
+
+void	test_strlcpy(char *dst1, char *dst2, char *src, size_t dstsize)
+{
+	printf("strlcpy ('%s', '%s', %lu): [FT] ", dst1, src, dstsize);
+	printf("%lu ('%s')\n", ft_strlcpy(dst1, src, dstsize), dst1);
+
+	printf("strlcpy ('%s', '%s', %lu): [C]  ", dst2, src, dstsize);
+	printf("%lu ('%s')\n", ft_strlcpy(dst2, src, dstsize), dst2);
+}
+
+void	test_ft_strlcpy(void)
+{
+	char buffer1[4];
+	char buffer2[4];
+	bzero(buffer1, sizeof(buffer1));
+	bzero(buffer2, sizeof(buffer2));
+	test_strlcpy(buffer1, buffer2, "DIO", sizeof(buffer1));
 }
 
 
@@ -464,5 +483,6 @@ int	main(void)
 	test_ft_atoi();
 	test_ft_calloc();
 	test_ft_strdup();
+	test_ft_strlcpy();
 	return (0);
 }
