@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 20:37:02 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:25:15 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -457,6 +457,23 @@ void	test_ft_strlcpy(void)
 	bzero(buffer1, sizeof(buffer1));
 	bzero(buffer2, sizeof(buffer2));
 	test_strlcpy(buffer1, buffer2, "DIO", sizeof(buffer1));
+	write_empty_line();
+}
+
+void test_substr(char const *s, unsigned int start, size_t len)
+{
+	printf("ft_substr ('%s', %d, %lu): [FT] ", s, start, len);
+	char *p = ft_substr(s, start, len);
+	printf("'%s'\n", p);
+	free (p);
+}
+
+void	test_ft_substr(void)
+{
+	test_substr("GOTT", 1, 2);
+	test_substr("abcde", 2, 4);
+	test_substr("ABCDE", 1, 3);
+	write_empty_line();
 }
 
 
@@ -484,5 +501,6 @@ int	main(void)
 	test_ft_calloc();
 	test_ft_strdup();
 	test_ft_strlcpy();
+	test_ft_substr();
 	return (0);
 }
