@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 20:13:20 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 20:26:43 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:00:07 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	len;
 
 	if (s == NULL || fd < 0)
-		return;
+		return ;
 	len = (int) ft_strlen(s);
 	write(fd, s, len);
 }
