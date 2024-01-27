@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:48:45 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/21 21:37:33 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 12:46:12 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*p;
+	unsigned char	*p;
 
-	p = (char *)s;
+	p = (unsigned char *)s;
 	while (n > 0)
 	{
 		*p = c;

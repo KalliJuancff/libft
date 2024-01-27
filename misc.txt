@@ -2,6 +2,8 @@
 # ----------
 1. La función 'strlen' peta cuando se le pasa una cadena que apunta a NULL.
    Por tanto, 'ft_strlen' no puede devolver un 0 cuando se le pasa NULL.
+2. Idem con la función 'memset'; también peta cuando se le pasa un puntero a NULL.
+3. Idem la función 'bzero'.
 
 # RESOURCES:
 # ----------
