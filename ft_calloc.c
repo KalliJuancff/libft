@@ -6,13 +6,14 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:03:24 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:11:21 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:12:25 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*result;
 	size_t			num_bytes;
