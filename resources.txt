@@ -1,3 +1,0 @@
-# Buscar alguno de los headers "del sistema":
-find / -type f -name "stdio.h" 2>/dev/null
-
