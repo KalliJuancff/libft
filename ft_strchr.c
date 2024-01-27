@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 11:49:58 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/21 13:22:29 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:53:13 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	char	ch;
+
+	ch = (char) c;
+	while (*s != ch)
 	{
-		if (*s == c)
-			return ((char *)s);
+		if (*s == '\0')
+			return (0);
 		s++;
 	}
-	return (NULL);
+	return ((char *) s);
 }

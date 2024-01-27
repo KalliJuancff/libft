@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:03:24 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 18:12:25 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:25:57 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	num_bytes = count * size;
 	result = malloc(num_bytes);
-	if (result == NULL)
+	if (!result)
 		return (NULL);
 	ft_bzero(result, num_bytes);
 	return (result);
