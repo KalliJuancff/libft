@@ -6,9 +6,26 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:23:30 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/25 13:48:16 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 17:07:44 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+static int	is_separator(char c)
+{
+	if (c == ' ')
+		return (1);
+	if (c == '\t')
+		return (1);
+	if (c == '\v')
+		return (1);
+	if (c == '\r')
+		return (1);
+	if (c == '\n')
+		return (1);
+	if (c == '\f')
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -17,7 +34,7 @@ int	ft_atoi(const char *str)
 	int	digit;
 
 	result = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\r' || *str == '\n')
+	while (is_separator(*str))
 		str++;
 	sign = 0;
 	if (*str == '-')
