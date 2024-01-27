@@ -26,7 +26,10 @@ OBJS = ft_isalpha.o \
 	ft_calloc.o \
 	ft_strdup.o \
 	ft_strlcpy.o \
-	ft_substr.o
+	ft_substr.o \
+	ft_putchar_fd.o \
+	ft_putstr_fd.o \
+	ft_putendl_fd.o
 DEPS = $(OBJS:.o=.d)
 AR = ar
 AR_FLAGS = rcs
