@@ -4,8 +4,12 @@
    Por tanto, 'ft_strlen' no puede devolver un 0 cuando se le pasa NULL.
 2. Idem con la función 'memset'; también peta cuando se le pasa un puntero a NULL.
 3. Idem la función 'bzero'.
-4. La función 'memcpy' original, en cambio, devuelve NULL cuando tanto el parámetro
-   'dest' como 'src' apuntan a NULL.
+4. La función 'ft_memcpy' necesita devolver NULL cuando tanto el parámetro 'dest'
+   como 'src' apuntan a NULL para imitar a la perfección a la función 'memcpy' y
+   no disparar un error.
+   Sin embargo, la función 'ft_memmove' no necesita dicho control porque,
+   internamente, invoca a 'ft_memcpy', la cual ya contiene dicho control.
+   Diría que las funciones originales 'memcpy' y 'memmove' funcionan del mismo modo.
 
 # RESOURCES:
 # ----------

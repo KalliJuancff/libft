@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 18:45:13 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/22 20:19:16 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:54:47 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*pdest;
 	unsigned char	*psrc;
 
-	if (dest <= src)
-	{
+	if (dest == src)
+		return (dest);
+	else if (dest < src)
 		return (ft_memcpy(dest, src, n));
-	}
 	else
 	{
 		psrc = (unsigned char *)src + n - 1;
