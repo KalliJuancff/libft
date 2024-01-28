@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 20:56:55 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 21:20:08 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:28:58 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	ft_putnbr_fd_aux(unsigned int n, int fd)
 {
 	if (n < 10)
-		ft_putchar_fd(n + 48, fd);
+		ft_putchar_fd(n + '0', fd);
 	else
 	{
 		ft_putnbr_fd_aux(n / 10, fd);
