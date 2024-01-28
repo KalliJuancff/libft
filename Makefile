@@ -21,11 +21,12 @@ OBJS = ft_isalpha.o \
 	ft_memcmp.o \
 	ft_memcpy.o \
 	ft_memmove.o \
+	ft_strlcpy.o \
+	ft_strlcat.o \
 	ft_strnstr.o \
 	ft_atoi.o \
 	ft_calloc.o \
 	ft_strdup.o \
-	ft_strlcpy.o \
 	ft_substr.o \
 	ft_putchar_fd.o \
 	ft_putstr_fd.o \
