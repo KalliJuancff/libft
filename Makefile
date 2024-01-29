@@ -30,6 +30,7 @@ OBJS = ft_isalpha.o \
 	ft_substr.o \
 	ft_strjoin.o \
 	ft_strtrim.o \
+	ft_split.o \
 	ft_strmapi.o \
 	ft_putchar_fd.o \
 	ft_putstr_fd.o \

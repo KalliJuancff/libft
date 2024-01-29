@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/26 18:25:15 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:11:07 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -460,7 +460,7 @@ void	test_ft_strlcpy(void)
 	write_empty_line();
 }
 
-void test_substr(char const *s, unsigned int start, size_t len)
+void	test_substr(char const *s, unsigned int start, size_t len)
 {
 	printf("ft_substr ('%s', %d, %lu): [FT] ", s, start, len);
 	char *p = ft_substr(s, start, len);
@@ -477,8 +477,68 @@ void	test_ft_substr(void)
 }
 
 
+void	test_split(char const *s, char c)
+{
+	int i = 0;
+	int salir = 0;
+	
+	printf("ft_split(\"%s\", '%c'): [FT]\n", s, c);
+
+	char **p = ft_split(s, c);
+	while (!salir)
+	{
+		printf("\tToken #%d: '%s'\n", i + 1, p[i]);
+		
+		free(p[i]);
+		
+		if (p[i] == NULL)
+			salir = 1;
+		else
+			i++;
+	}
+	free(p);
+}
+
+void	test_ft_split(void)
+{
+	test_split("    gott vati ", ' ');
+	test_split("gott", 0);
+	test_split("       ", ' ');
+	test_split("", ' ');
+	test_split("", '\65');
+	test_split(" mein Gott\11 und \11\11 mein vater\11", '\11');
+	test_split("\t\t\t\thello!\t\t\t\t", '\t');
+	test_split("ggggggggggg", 'g');
+	test_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	write_empty_line();
+}
+
+
 int	main(void)
 {
+	// printf("%p\n", strchr(NULL, 7));
+	// printf("%p\n", ft_strchr(NULL, 7));
+	// ft_putnbr_fd(1024, 1);
+	// ft_putnbr_fd(-92, 1);
+	// ft_putnbr_fd(0, 1);
+	
+
+	// int x;
+	// x = strlen(NULL);
+	// printf("%d\n", x);i
+	
+	/*
+	void *p1;
+	p1 = memmove(NULL, NULL, 7);
+	printf("%p\n", p1);
+
+	void *p1;
+	void *p2;
+	p1 = memmove(NULL, NULL, 7);
+	p2 = ft_memmove(NULL, NULL, 7);
+	printf("%p\t%p\n", p1, p2);
+	*/
+	
 	test_ft_isalpha();
 	test_ft_isdigit();
 	test_ft_isalnum();
@@ -502,5 +562,7 @@ int	main(void)
 	test_ft_strdup();
 	test_ft_strlcpy();
 	test_ft_substr();
+	test_ft_split();
+
 	return (0);
 }
