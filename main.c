@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/29 14:11:07 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/29 20:56:26 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -501,12 +501,12 @@ void	test_split(char const *s, char c)
 
 void	test_ft_split(void)
 {
-	test_split("    gott vati ", ' ');
+	test_split("----gott-vater---", '-');
 	test_split("gott", 0);
 	test_split("       ", ' ');
 	test_split("", ' ');
 	test_split("", '\65');
-	test_split(" mein Gott\11 und \11\11 mein vater\11", '\11');
+	test_split(" Mein Gott\11 und \11\11 mein vater\11", '\11');
 	test_split("\t\t\t\thello!\t\t\t\t", '\t');
 	test_split("ggggggggggg", 'g');
 	test_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');

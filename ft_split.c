@@ -6,16 +6,15 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:40:55 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/29 17:58:30 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/29 20:52:46 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	is_separator(char character, char separator)
+static int	is_delimiter(char character, char delimiter)
 {
-	return (character == separator);
+	return (character == delimiter);
 }
 
 static int	get_number_of_tokens(char const *s, char c)
@@ -25,17 +24,35 @@ static int	get_number_of_tokens(char const *s, char c)
 	result = 0;
 	while (*s != '\0')
 	{
-		while (*s != '\0' && is_separator(*s, c))
+		while (*s != '\0' && is_delimiter(*s, c))
 			s++;
 		if (*s != '\0')
 			result++;
-		while (*s != '\0' && !is_separator(*s, c))
+		while (*s != '\0' && !is_delimiter(*s, c))
 			s++;
 	}
 	return (result);
 }
 
-static int	populate_split(char **array, char const *s, char c)
+char	*get_start_and_length_of_token(char const *s, char c, int *len)
+{
+	char	*start;
+
+	start = NULL;
+	*len = 0;
+	while (*s != '\0' && is_delimiter(*s, c))
+		s++;
+	if (*s != '\0')
+		start = (char *) s;
+	while (*s != '\0' && !is_delimiter(*s, c))
+	{
+		(*len)++;
+		s++;
+	}
+	return (start);
+}
+
+static char	**populate_split(char **array, char const *s, char c)
 {
 	int		i;
 	char	*start;
@@ -44,42 +61,28 @@ static int	populate_split(char **array, char const *s, char c)
 	i = 0;
 	while (*s != '\0')
 	{
-		start = NULL;
-		len = 0;
-		while (*s != '\0' && is_separator(*s, c))
-			s++;
-		if (*s != '\0')
-			start = (char *) s;
-		while (*s != '\0' && !is_separator(*s, c))
+		start = get_start_and_length_of_token(s, c, &len);
+		if (start == NULL)
+			break ;
+		array[i] = malloc((len + 1) * sizeof(char));
+		if (array[i] == NULL)
 		{
-			len++;
-			s++;
+			i--;
+			while (i >= 0)
+				free(array[i]);
+			return (NULL);
 		}
-		if (start != NULL)
-		{
-			array[i] = malloc((len + 1) * sizeof(char));
-			if (array[i] == NULL)
-			{
-				i--;
-				while (i >= 0)
-				{
-					free(array[i]);
-					i--;
-				}
-				return (0);
-			}
-			ft_strlcpy(array[i], start, len + 1);
-			i++;
-		}
+		ft_strlcpy(array[i], start, len + 1);
+		s = start + len;
+		i++;
 	}
-	return (1);
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		num_tokens;
-	int		can_populate_split;
 
 	if (s == NULL)
 		return (NULL);
@@ -87,8 +90,7 @@ char	**ft_split(char const *s, char c)
 	result = malloc((num_tokens + 1) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
-	can_populate_split = populate_split(result, s, c);
-	if (!can_populate_split)
+	if (populate_split(result, s, c) == NULL)
 	{
 		free(result);
 		return (NULL);
@@ -96,20 +98,3 @@ char	**ft_split(char const *s, char c)
 	result [num_tokens] = NULL;
 	return (result);
 }
-
-
-/*
-	int	i = 0;
-	while (i < num_tokens)
-	{
-		result[i] = malloc(2 * sizeof(char));
-		result[i][0] = i + 49;
-		result[i][1] = '\0';
-		i++;
-	}
-
-	result[0] = malloc(5 * sizeof(char));
-	ft_strlcpy(result[0], "gott", 5);
-	result[1] = malloc(5 * sizeof(char));
-	ft_strlcpy(result[1], "vati", 5);
-*/
