@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:40:55 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/29 20:52:46 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:50:04 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static char	**populate_split(char **array, char const *s, char c)
 		{
 			i--;
 			while (i >= 0)
-				free(array[i]);
+				free(array[i--]);
 			return (NULL);
 		}
 		ft_strlcpy(array[i], start, len + 1);
