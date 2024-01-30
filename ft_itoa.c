@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:58:35 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:12:26 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:16:07 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_buffer_long(int n)
 {
-	int	result;
+	int				result;
 	unsigned int	i;
 
 	result = 1;
@@ -23,7 +23,7 @@ static int	get_buffer_long(int n)
 		n = -n;
 		result++;
 	}
-	i = (unsigned int)n;
+	i = (unsigned int) n;
 	while (i >= 10)
 	{
 		i /= 10;
