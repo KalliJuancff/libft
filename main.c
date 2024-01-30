@@ -6,12 +6,13 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/30 19:13:03 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:13:18 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <ctype.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -514,6 +515,28 @@ void	test_ft_split(void)
 }
 
 
+void	test_itoa(int n)
+{
+	char	*result;
+
+	result = ft_itoa(n);
+	printf("ft_itoa(%d): \"%s\"\n", n, result);
+	free(result);
+}
+
+void	test_ft_itoa(void)
+{
+	test_itoa(INT_MIN);
+	test_itoa(-1234567890);
+	test_itoa(-4120);
+	test_itoa(0);
+	test_itoa(4120);
+	test_itoa(1234567890);
+	test_itoa(INT_MAX);
+	write_empty_line();
+}
+
+
 void    reverse_case(unsigned int index, char* character)
 {
 	index++;
@@ -555,6 +578,7 @@ void	test_ft_striteri()
 	test_striteri("gOTT");
 	test_striteri("VaTeR");
 	test_striteri("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ");
+	write_empty_line();
 }
 
 int	main(void)
@@ -606,6 +630,7 @@ int	main(void)
 	test_ft_strlcpy();
 	test_ft_substr();
 	test_ft_split();
+	test_ft_itoa();
 	test_ft_striteri();
 
 	return (0);
