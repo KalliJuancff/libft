@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/29 20:56:26 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:13:03 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -514,6 +514,49 @@ void	test_ft_split(void)
 }
 
 
+void    reverse_case(unsigned int index, char* character)
+{
+	index++;
+        if (*character >= 'A' && *character <= 'Z')
+                *character += 32;
+        else if (*character >= 'a' && *character <= 'z')
+                *character -= 32;
+}
+
+void    secret_message(unsigned int index, char* character)
+{
+	index++;
+        if (*character == 'A' || *character == 'a')
+                *character = '1';
+        if (*character == 'E' || *character == 'e')
+                *character = '2';
+        if (*character == 'I' || *character == 'i')
+                *character = '3';
+        if (*character == 'O' || *character == 'o')
+                *character = '4';
+        if (*character == 'U' || *character == 'u')
+                *character = '5';
+}
+
+void    test_striteri(char *s)
+{
+	char buffer[256];
+
+	ft_strlcpy(buffer, s, ft_strlen(s) + 1);
+	printf("CADENA ORIGINAL ft_striteri: %s\n", buffer);
+	ft_striteri(buffer, reverse_case);
+	printf("CADENA MODIFICADA (reverse case): %s\n", buffer);
+	ft_striteri(buffer, secret_message);
+	printf("CADENA MODIFICADA (secret message): %s\n", buffer);
+}
+
+void	test_ft_striteri()
+{
+	test_striteri("gOTT");
+	test_striteri("VaTeR");
+	test_striteri("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ");
+}
+
 int	main(void)
 {
 	// printf("%p\n", strchr(NULL, 7));
@@ -563,6 +606,7 @@ int	main(void)
 	test_ft_strlcpy();
 	test_ft_substr();
 	test_ft_split();
+	test_ft_striteri();
 
 	return (0);
 }
