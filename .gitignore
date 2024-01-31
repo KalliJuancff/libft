@@ -54,3 +54,7 @@ dkms.conf
 
 # Ficheros temporales de vim
 *.swp
+# Fichero bonus de Makefile
+.bonus
+# Fichero de Mac
+.DS_Store
