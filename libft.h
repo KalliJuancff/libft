@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:59:03 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/31 10:08:12 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:50:06 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
 
 t_list	*ft_lstnew(void *content);
+int		ft_lstsize(t_list *lst);
 
 #endif
