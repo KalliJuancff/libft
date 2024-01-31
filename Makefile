@@ -41,8 +41,10 @@ OBJS = ft_isalpha.o \
 	ft_putendl_fd.o \
 	ft_putnbr_fd.o
 OBJS_BONUS = ft_lstnew_bonus.o \
+	ft_lstadd_front_bonus.o \
 	ft_lstsize_bonus.o \
-	ft_lstlast_bonus.o
+	ft_lstlast_bonus.o \
+	ft_lstadd_back_bonus.o
 DEPS = $(OBJS:.o=.d)
 DEPS_BONUS = $(OBJS_BONUS:.o=.d)
 AR = ar
