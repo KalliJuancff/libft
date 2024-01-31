@@ -2,7 +2,9 @@
 # target (objetivo o destino): prerequisites (prerrequisitos o dependencias)
 # 	recipe (receta, acciones, instrucciones o comandos)
 
+
 NAME = libft.a
+NAME_BONUS = .bonus
 HEADER = libft.h
 OBJS = ft_isalpha.o \
 	ft_isdigit.o \
@@ -38,7 +40,9 @@ OBJS = ft_isalpha.o \
 	ft_putstr_fd.o \
 	ft_putendl_fd.o \
 	ft_putnbr_fd.o
+OBJS_BONUS = ft_lstnew_bonus.o 
 DEPS = $(OBJS:.o=.d)
+DEPS_BONUS = $(OBJS_BONUS:.o=.d)
 AR = ar
 AR_FLAGS = rcs
 CC = cc
@@ -47,19 +51,28 @@ CC_FLAGS2 = -MD
 RM = rm
 RM_FLAGS = -f
 
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(AR_FLAGS) $(NAME) $(OBJS)
 
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(NAME) $(OBJS_BONUS)
+	touch $(NAME_BONUS)
+	$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+
 %.o: %.c
 	$(CC) -o $@ $(CC_FLAGS) $(CC_FLAGS2) -c $<
 
 -include $(DEPS)
+-include $(DEPS_BONUS)
+
 
 clean:
-	$(RM) $(RM_FLAGS) $(OBJS)
-	$(RM) $(RM_FLAGS) $(DEPS)
+	$(RM) $(RM_FLAGS) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(RM_FLAGS) $(DEPS) $(DEPS_BONUS)
 	$(RM) $(RM_FLAGS) a.out
 
 fclean: clean
@@ -70,8 +83,10 @@ re: fclean all
 norm:
 	@norminette $(HEADER)
 	@norminette $(OBJS:.o=.c)
+	@norminette $(OBJS_BONUS:.o=.c)
 
 compile:
-	$(CC) $(CC_FLAGS) main.c $(OBJS:.o=.c)
+	$(CC) $(CC_FLAGS) main.c $(OBJS:.o=.c) $(OBJS_BONUS:.o=.c)
 
-.PHONY: all clean fclean re norm compile
+
+.PHONY: all clean fclean re bonus norm compile

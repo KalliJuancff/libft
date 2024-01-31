@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:13:18 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/31 11:55:52 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -581,6 +581,42 @@ void	test_ft_striteri()
 	write_empty_line();
 }
 
+
+void	test_lstnew(void *content, char *format)
+{
+	t_list	*p;
+	p = ft_lstnew(content);
+	if (ft_strncmp(format, "%s", 2) == 0)
+		printf("CONTENT: %s\n", (char *) p->content);
+	else if (ft_strncmp(format, "%d", 2) == 0)
+		printf("CONTENT: %d\n", *((int *) (p->content)));
+	else if (ft_strncmp(format, "%f", 2) == 0)
+		printf("CONTENT: %f\n", *((float *) (p->content)));
+	free(p);
+}
+
+void	test_lstnew_no_funciona(void *content, const char *format)
+{
+	t_list	*p;
+	p = ft_lstnew(content);
+	char buffer[101];
+	sprintf(buffer, format, p->content);
+	printf("%s\n", buffer);
+	free(p);
+}
+
+void	test_ft_lstnew()
+{
+	test_lstnew("Gott", "%s");
+
+	int	number = 752430;
+	test_lstnew(&number, "%d");
+
+	float	number2 = 3.14;
+	test_lstnew(&number2, "%f");
+}
+
+
 int	main(void)
 {
 	// printf("%p\n", strchr(NULL, 7));
@@ -632,6 +668,8 @@ int	main(void)
 	test_ft_split();
 	test_ft_itoa();
 	test_ft_striteri();
+	
+	test_ft_lstnew();
 
 	return (0);
 }
