@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:59:03 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/31 16:52:16 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:22:41 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif
