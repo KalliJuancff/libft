@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:59:03 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/31 15:50:06 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:09:25 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ char	**ft_split(char const *s, char c);
 
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
