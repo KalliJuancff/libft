@@ -6,14 +6,14 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:25:10 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/01 16:35:34 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:44:37 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static t_list	*create_new_node(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static t_list	*create(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	void	*new_content;
 	t_list	*result;
@@ -40,7 +40,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	first_node = NULL;
 	while (lst != NULL)
 	{
-		new_node = create_new_node(lst, f, del);
+		new_node = create(lst, f, del);
 		if (new_node == NULL)
 		{
 			if (first_node != NULL)
