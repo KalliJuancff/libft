@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:40 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/31 11:55:52 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:04:23 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -614,6 +614,46 @@ void	test_ft_lstnew()
 
 	float	number2 = 3.14;
 	test_lstnew(&number2, "%f");
+
+	write_empty_line();
+}
+
+
+void    show_node(void *content)
+{
+        printf("CONTENIDO NODO: %s\n", (char *) content);
+}
+
+void	test_lstmap(t_list **items)
+{
+	ft_lstiter(*items, show_node);
+}
+
+void    no_deletion(void *content)
+{
+	// Evitar warning por variable no usada
+	if (content != NULL)
+		content = NULL;
+}
+
+void	test_ft_lstmap()
+{
+        t_list  **items;
+        t_list  *front;
+        t_list  *medium;
+        t_list  *back;
+
+        items = malloc (3 * sizeof(t_list *));
+        front = ft_lstnew("GOTT");
+        medium = ft_lstnew("VATER");
+        back = ft_lstnew("DIO");
+        ft_lstadd_front(items, front);
+        ft_lstlast(*items)->next = medium;
+        ft_lstlast(*items)->next = back;
+
+	test_lstmap(items);	
+
+        ft_lstclear(items, no_deletion);
 }
 
 
@@ -668,8 +708,8 @@ int	main(void)
 	test_ft_split();
 	test_ft_itoa();
 	test_ft_striteri();
-	
 	test_ft_lstnew();
+	test_ft_lstmap();
 
 	return (0);
 }

@@ -47,10 +47,16 @@ OBJS_BONUS = ft_lstnew_bonus.o \
 	ft_lstadd_back_bonus.o \
 	ft_lstdelone_bonus.o \
 	ft_lstclear_bonus.o \
-	ft_lstiter_bonus.o
+	ft_lstiter_bonus.o \
+	ft_lstmap_bonus.o
 DEPS = $(OBJS:.o=.d)
 DEPS_BONUS = $(OBJS_BONUS:.o=.d)
 AR = ar
+# FLAGS DE AR:
+# r = Insertar ficheros en el archivo o reemplazar los ficheros si ya existen
+# c = Omitir la advertencia cuando la librería tenga que ser creada 
+# s = Crear un índice simbólico para la biblioteca estática
+#     (IMPRESCINDIBLE, porque se creará una tabla de símbolos)
 AR_FLAGS = rcs
 CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
@@ -92,8 +98,8 @@ norm:
 	@norminette $(OBJS:.o=.c)
 	@norminette $(OBJS_BONUS:.o=.c)
 
-compile:
-	$(CC) $(CC_FLAGS) main.c $(OBJS:.o=.c) $(OBJS_BONUS:.o=.c)
+compile: $(NAME_BONUS) main.c
+	$(CC) $(CC_FLAGS) main.c $(NAME)
 
 
 .PHONY: all clean fclean re bonus norm compile
