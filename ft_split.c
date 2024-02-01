@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:40:55 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/30 22:50:04 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:37:07 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	get_number_of_tokens(char const *s, char c)
 	return (result);
 }
 
-char	*get_start_and_length_of_token(char const *s, char c, int *len)
+static char	*get_start_and_length_of_token(char const *s, char c, int *len)
 {
 	char	*start;
 

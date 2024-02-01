@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 11:54:55 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/28 13:55:14 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:38:21 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static size_t	get_long_buffer(char *str, size_t size)
 	return (result);
 }
 
-// Cuando la longitud del buffer es igual al tamaño especificado como parámetro
-// el buffer de destino está lleno, así que no podemos agregar más carácteres.
+// Cuando la longitud del buffer es igual al tamaño especificado como parámetro,
+// el buffer de destino está lleno por lo que no podemos agregar más carácteres.
 // En ese caso, aunque no hemos hecho ninguna copia "real", tenemos que devolver
 // la longitud total si no hubiese restricciones de espacio
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

@@ -6,14 +6,14 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:25:10 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/01 15:57:53 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:35:34 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-t_list	*create_new_node(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static t_list	*create_new_node(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	void	*new_content;
 	t_list	*result;
