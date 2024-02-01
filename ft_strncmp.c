@@ -6,11 +6,11 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:21:19 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/28 11:33:45 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:03:44 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

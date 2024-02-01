@@ -6,11 +6,11 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:17:29 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 12:53:18 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:56:30 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 void	*ft_bzero(void *s, size_t n)
 {

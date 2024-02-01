@@ -6,11 +6,11 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 11:49:58 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 18:53:13 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:02:37 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {

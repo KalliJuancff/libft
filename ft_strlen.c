@@ -6,11 +6,11 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:06:50 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 12:22:06 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:03:15 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {

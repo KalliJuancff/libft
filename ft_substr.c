@@ -6,12 +6,12 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:20:21 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 11:15:29 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:05:04 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	get_min_value(size_t value1, size_t value2)
 {

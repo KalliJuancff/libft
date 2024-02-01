@@ -6,12 +6,12 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:43:59 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 19:46:11 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:04:26 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
+#include <stdlib.h>
 
 char	*ft_strrchr(const char *s, int c)
 {

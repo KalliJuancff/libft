@@ -6,11 +6,11 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:46:58 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 17:19:42 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:00:24 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

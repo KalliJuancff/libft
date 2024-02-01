@@ -6,11 +6,11 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:48:45 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/27 12:46:12 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:01:57 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
