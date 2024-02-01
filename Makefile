@@ -76,7 +76,7 @@ $(NAME_BONUS): $(NAME) $(OBJS_BONUS)
 	touch $(NAME_BONUS)
 	$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
 
-%.o: %.c
+%.o: %.c Makefile
 	$(CC) -o $@ $(CC_FLAGS) $(CC_FLAGS2) -c $<
 
 -include $(DEPS)
@@ -86,20 +86,11 @@ $(NAME_BONUS): $(NAME) $(OBJS_BONUS)
 clean:
 	$(RM) $(RM_FLAGS) $(OBJS) $(OBJS_BONUS)
 	$(RM) $(RM_FLAGS) $(DEPS) $(DEPS_BONUS)
-	$(RM) $(RM_FLAGS) a.out
 
 fclean: clean
 	$(RM) $(RM_FLAGS) $(NAME)
 
 re: fclean all
 
-norm:
-	@norminette $(HEADER)
-	@norminette $(OBJS:.o=.c)
-	@norminette $(OBJS_BONUS:.o=.c)
 
-compile: $(NAME_BONUS) main.c
-	$(CC) $(CC_FLAGS) main.c $(NAME)
-
-
-.PHONY: all clean fclean re bonus norm compile
+.PHONY: all clean fclean re bonus
