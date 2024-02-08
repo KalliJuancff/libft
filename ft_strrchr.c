@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42barcel.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:43:59 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/01 16:04:26 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:58:16 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *) &(s[len]));
 		len--;
 	}
-	return (0);
+	return (NULL);
 }
